@@ -11,6 +11,9 @@ const App = () => {
       <Container>
         <Grid container spacing={2}>
           <Card />
+          <Card />
+          <Card />
+          <Card />
         </Grid>
       </Container>
     </div>
