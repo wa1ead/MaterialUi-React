@@ -9,7 +9,7 @@ const App = () => {
     <div className="App">
       <NavBar />
       <Container>
-        <Grid container spacing={5}>
+        <Grid container spacing={2}>
           <Card />
         </Grid>
       </Container>
