@@ -5,6 +5,32 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Rating from "@mui/material/Rating";
 import { AccessTime } from "@mui/icons-material";
+import { createTheme } from "@mui/material";
+
+const theme = createTheme({
+  components: {
+    MuiTypography: {
+      variants: [
+        {
+          props: {
+            variant: "body2",
+          },
+          style: {
+            fontSize: 11,
+          },
+        },
+        {
+          props: {
+            variant: "body3",
+          },
+          style: {
+            fontSize: 9,
+          },
+        },
+      ],
+    },
+  },
+});
 
 const Card = () => {
   return (
@@ -54,7 +80,7 @@ const Card = () => {
         </Box>
         <Box>
           <Typography variant="h6" component="h3" marginTop={0}>
-            From C $145
+            From $145
           </Typography>
         </Box>
       </Paper>
