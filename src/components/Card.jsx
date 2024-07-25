@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
@@ -32,19 +33,15 @@ const theme = createTheme({
   },
 });
 
-const Card = () => {
+const Card = ({ tour }) => {
   return (
     <Grid item xs={3}>
       <ThemeProvider theme={theme}>
         <Paper elevation={3}>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0qyQLFvNh7o1xuNyEu9QOFEd34jJR-rZ46g&s"
-            alt="SYDNEY"
-            className="img"
-          />
+          <img src={tour.image} alt={tour.name} className="img" />
           <Box paddingX={1}>
             <Typography variant="subtitle1" component="h2">
-              SYDNEY
+              {tour.name}
             </Typography>
           </Box>
           <Box
@@ -55,7 +52,7 @@ const Card = () => {
           >
             <AccessTime sx={{ width: 12.5 }} />
             <Typography variant="body2" component="p" marginLeft={0.5}>
-              5 hours
+              {tour.duration}
             </Typography>
           </Box>
           <Box
@@ -67,21 +64,21 @@ const Card = () => {
           >
             <Rating
               name="read-only"
-              value={4.5}
+              value={tour.rating}
               precision={0.5}
               readOnly
               size="small"
             />
             <Typography variant="body2" component="p" marginLeft={0.5}>
-              4.5
+              {tour.rating}
             </Typography>
             <Typography variant="body3" component="p" marginLeft={1.5}>
-              (656 reviews)
+              ({tour.numberOfReviews} reviews)
             </Typography>
           </Box>
           <Box>
             <Typography variant="h6" component="h3" marginTop={0}>
-              From $145
+              From ${tour.price}
             </Typography>
           </Box>
         </Paper>
