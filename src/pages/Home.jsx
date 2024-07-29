@@ -1,13 +1,11 @@
-import Card from "../components/Card";
-import NavBar from "../components/NavBar";
-import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Card from "../components/Card";
 import cities from "../data.json";
 
 const Home = () => (
   <div className="App">
-    <NavBar />
     <Container sx={{ marginY: 5 }}>
       {cities.map((city) => (
         <>
